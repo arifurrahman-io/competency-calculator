@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button result, resetValue;
 
-    private ImageView imageView, facebook, whatsapp;
+    private ImageView imageView, facebook, whatsapp, youtube;
 
     double a, b, c , myResult;
 
@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
         facebook = (ImageView) findViewById(R.id.fb);
         whatsapp = (ImageView) findViewById(R.id.wt);
+        youtube = (ImageView) findViewById(R.id.yt);
 
         facebook.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,6 +66,17 @@ public class MainActivity extends AppCompatActivity {
                 intent.setAction(Intent.ACTION_VIEW);
                 intent.addCategory(Intent.CATEGORY_BROWSABLE);
                 intent.setData(Uri.parse("https://wa.me/8801684516151"));
+                startActivity(intent);
+            }
+        });
+
+        youtube.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse("https://www.youtube.com/@Purnota"));
                 startActivity(intent);
             }
         });
